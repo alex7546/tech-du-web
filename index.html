@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		input{
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	<h1 align="center">AFFICHAGE DE LA DATE</h1>
+		<p align="center">Heure a l'ouverture de la page :
+			<input type="text" id="I1" size=10 readonly>
+			Date : 
+			<input type="text" id="I2" size=15 readonly>
+		</p>
+		<p align="center">
+			<button onclick="MAJ()">MAJ Heure</button>
+			H:
+			<input type="text" id="I3" size=2 readonly>
+			M:
+			<input type="text" id="I4" size=2 readonly>
+			S:
+			<input type="text" id="I5" size=2 readonly>
+		</p>
+		<h6 align=center>Projet par SOUHAIL BENLHACHEMI<br>
+		EMail :  benhachemisouhail@gmail.com</h6>
+</body>
+<script type="text/javascript">
+	var heureOuverture = document.getElementById('I1'); 
+	var dateOuverture = document.getElementById('I2');
+	var date = new Date() ;
+	dateOuverture.value = date.toLocaleDateString();
+	heureOuverture.value = date.toLocaleTimeString();
+	function MAJ(){
+		var dateMAJ = new Date();
+		var heure = document.getElementById('I3');
+		var minute = document.getElementById('I4');
+		var seconde = document.getElementById('I5');
+		heure.value = dateMAJ.getHours();
+		minute.value = dateMAJ.getMinutes();
+		seconde.value = dateMAJ.getSeconds();
+	}
+</script>
+</html>
